@@ -9,7 +9,7 @@ export class AdminapiService {
 
   constructor(private http:HttpClient) { }
 
-  server_url='http://localhost:5000'
+  server_url='https://employee-server-m2nf.onrender.com/'
 
   authorization(){
     return this.http.get(`${this.server_url}/employee/1`)
