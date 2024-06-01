@@ -1,0 +1,39 @@
+<div class="d-flex">
+    <div class="flex-column bg-info sidebar">
+        <h4 class="ms-4 mt-5 fs-5"><a routerLink="/dashboard" style="text-decoration: none; color: white;">Dashboard</a></h4>
+        <h4 class="ms-4 mt-2 fs-5"><a routerLink="/employee-list" style="text-decoration: none; color: white;">Employee List</a></h4>
+        <h4 class="ms-4 mt-2 fs-5"><a routerLink="/employee-add" style="text-decoration: none; color: white;">Add Employee</a></h4>
+
+    </div>
+    <div class="ms-5 mt-5 text-dark">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="col-md-8">
+                        <h1>WELCOME ADMIN</h1>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="card shadow" style="width: 500px;height: 400px;">
+                            <mat-card class="demo-inline-calendar-card">
+                                <mat-calendar [(selected)]="selected"></mat-calendar>
+                              </mat-card>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card shadow" style="width: 500px;height: 400px;">
+                            <highcharts-chart
+  [Highcharts]="Highcharts"
+  [options]="chartOptions"ṅ
+  
+  style="width: 100%; height: 400px; display: block;"
+></highcharts-chart>
+                        </div>
+                    </div>
+
+                </div>
+                </div>
+        </div>
+    </div>
+</div>

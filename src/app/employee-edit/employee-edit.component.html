@@ -1,0 +1,40 @@
+<div class="d-flex">
+    <div class="flex-column bg-info sidebar">
+        <h4 class="ms-4 mt-5 fs-5"><a routerLink="/dashboard" style="text-decoration: none; color: white;">Dashboard</a></h4>
+        <h4 class="ms-4 mt-2 fs-5"><a routerLink="/employee-list" style="text-decoration: none; color: white;">Employee List</a></h4>
+        <h4 class="ms-4 mt-2 fs-5"><a routerLink="/employee-add" style="text-decoration: none; color: white;">Add Employee</a></h4>
+
+    </div>
+    <div class="ms-5 mt-5 text-dark">
+        <h1 class="text-center ms-5 ps-5">Edit Employee</h1>
+       <div class="d-flex align-items-center justify-content-center ms-5 ps-5 mt-4">
+            <form class="form p-3 ms-5 rounded">
+                <div class="mt-4">
+                    <input type="text" placeholder="employee Id" class="form-control" name="empid" [(ngModel)]="employee.id" required pattern="[0-9]*" #employeeid="ngModel">
+                </div>
+                <span *ngIf="employeeid.invalid && employeeid.touched" class="text-danger">Invalid id</span>
+                <div class="mt-4">
+                    <input type="text" placeholder="employee name" class="form-control" name="empname" [(ngModel)]="employee.name" required pattern="[a-zA-Z]{3,}$" #employeename="ngModel">
+                </div>
+                <span *ngIf="employeename.invalid && employeename.touched" class="text-danger">Invalid username</span>
+                <div class="mt-4">
+                    <input type="text" placeholder="email" class="form-control" name="email" email [(ngModel)]="employee.email" required #employeemail="ngModel">
+                </div>
+                <span *ngIf="employeemail.invalid && employeemail.touched" class="text-danger">Invalid email</span>
+                <div class="mt-4">
+                    <div class="form-floating">
+                        <select class="form-select" id="floatingSelect" aria-label="Floating label select example" name="empstatus" [(ngModel)]="employee.status" required #employeestatus="ngModel">
+                          <option value="0">Active</option>
+                          <option value="1">Inactive</option>
+                        </select>
+                      </div>
+                      <span class="text-danger" *ngIf="employeestatus.invalid && employeestatus.touched">Invalid status</span>
+                </div>
+                <div class="mt-4 d-flex">
+                    <button  class="btn btn-warning" (click)="cancelbutton()">Cancel</button>
+                    <button type="submit" class="btn btn-success ms-4" (click)="updateEmployee(employee.id)">Update</button>
+                </div>
+            </form>
+       </div>
+    </div>
+</div>
